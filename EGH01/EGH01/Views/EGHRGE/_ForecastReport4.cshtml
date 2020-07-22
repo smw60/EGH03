@@ -1,0 +1,79 @@
+﻿@using EGH01.Core;
+@using EGH01.Models.EGH;
+@using EGH01DB;
+@using EGH01DB.Primitives;
+@using EGH01DB.Types;
+@using EGH01DB.Blurs;
+@using EGH01DB.Objects;
+@using EGH01.Models.EGHRGE;
+@model  EGH01.Models.EGHRGE.ForecastViewConext
+
+@{
+     
+    EGH01.Models.EGHRGE.ForecastViewConext context = @Model;
+    EGH01DB.RGEContext.ECOForecast0 level0 = @Model.ecoforecastx.level0;
+    EGH01DB.RGEContext.ECOForecast1 level1 = @Model.ecoforecastx.level1;
+    EGH01DB.RGEContext.ECOForecast2 level2 = @Model.ecoforecastx.level2;
+    EGH01DB.RGEContext.ECOForecast3 level3 = @Model.ecoforecastx.level3;
+    EGH01DB.RGEContext.ECOForecast4 level4 = @Model.ecoforecastx.level4;
+    
+}
+
+<div class="boxdata">
+
+    <h4>4. Слой грунтовых вод </h4>
+        
+    <fieldset form="ChoiseRiskObject">
+        <legend> Вычисления </legend>
+        <p>
+            <label class="boxdata-label-40 ">Уровень грунтовых вод(м)</label>
+            @level4.H4
+        </p>
+        <p>
+            <label class="boxdata-label-40 ">Масса нефтепродукта достигшая грунтовых вод(кг)</label>
+            @level4.dM4
+        </p>
+
+        @if (Math.Round(level4.dM4, 0) > 0)
+    {
+        <p>
+            <label class="boxdata-label-40 ">Время достижения максимальной концентрации(с) </label>
+            @level4.t4 = @(Math.Round(level4.t4 / Const.SEC_PER_DAY, 1)) (сутки)
+        </p>
+        <p>
+            <label class="boxdata-label-40 ">Средняя концентрация в грунтовых водах (кг/м<sup>3</sup>) </label>
+            @level4.C4 = @(level4.C4 * Const.KG_to_MG / Const.M3_to_DM3) (мг/дм<sup>3</sup>))
+        </p>
+        <p>
+            <label class="boxdata-label-40 ">Максимальное расстояние распространения фронта загрзнения (м) </label>
+            @level4.l4
+        </p>
+}
+    </fieldset>
+    
+    @if (level4.dM4 > 0 && @level4.l4 > 0 )
+    { 
+       
+           
+            <fieldset form="ChoiseRiskObject">
+                <legend> Природоохранные объекты ( @( String.Format("радиус: {0} - {1}м )", level1.R1, level4.l4)) </legend>
+                @if (level4.f4ecoobjectslist.Count > 0)
+                {
+                   Html.Raw(RGEContext.FEcoObjectsList.FEcoObject.starttable);
+                   foreach (RGEContext.FEcoObjectsList.FEcoObject eo in level4.f4ecoobjectslist)
+                   {
+                    <p>  @Html.Raw(eo.linetable) </p>   
+                   }
+                   @Html.Raw(RGEContext.FEcoObjectsList.FEcoObject.endtable)
+                }
+                else
+                {
+                 <p> Прироохранные объекты не найдены </p>
+                }
+            </fieldset>
+         
+        
+   }
+  
+</div>
+       

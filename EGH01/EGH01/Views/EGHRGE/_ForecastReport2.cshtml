@@ -1,0 +1,58 @@
+﻿@using EGH01.Core;
+@using EGH01.Models.EGH;
+@using EGH01DB.Primitives;
+@using EGH01DB.Types;
+@using EGH01DB.Blurs;
+@using EGH01DB.Objects;
+@using EGH01.Models.EGHRGE;
+@model  EGH01.Models.EGHRGE.ForecastViewConext
+
+@{
+     
+    EGH01.Models.EGHRGE.ForecastViewConext context = @Model;
+    EGH01DB.RGEContext.ECOForecast0 level0 = @Model.ecoforecastx.level0;
+    EGH01DB.RGEContext.ECOForecast1 level1 = @Model.ecoforecastx.level1;
+    EGH01DB.RGEContext.ECOForecast2 level2 = @Model.ecoforecastx.level2;
+    
+}
+
+<div class="boxdata">
+
+    <h4>2. Почвенный слой</h4>
+    
+    <fieldset form="ChoiseRiskObject">
+        <legend> Справочные данные </legend>
+        <p>
+            <label class="boxdata-label-40 ">Нефтеемкость почвы </label>
+            @level2.u2
+
+        </p>
+        <p>
+            @*<label class="boxdata-label-40 ">Средняя высота почвенного слоя (м) </label>*@
+            <label class="boxdata-label-40 ">Мощность гумусового горизонта(см) </label>
+            @(level2.h2*100)
+        </p>
+    </fieldset>
+    <fieldset form="ChoiseRiskObject">
+        <legend> Вычисления </legend>
+        <p>
+            <label class="boxdata-label-40 ">Масса нефтепродукта на поверхности почвы (кг) </label>
+            @(level0.M0 - level1.M1)
+        </p>
+        <p>
+            <label class="boxdata-label-40 ">Масса адсорбированного почвой нефтепродукта (кг) </label>
+             @level2.M2
+        </p>
+        <p>
+            @*<label class="boxdata-label-40 ">Максимальная глубина проникновения нефтепродукта в почву (м) </label>
+            @level2.H2*@
+            <label class="boxdata-label-40 ">Максимальная глубина проникновения нефтепродукта в почву(cм) </label>
+            @(level2.H2 * 100)
+        </p>
+    </fieldset>
+
+
+
+
+</div>
+       

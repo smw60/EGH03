@@ -1,0 +1,70 @@
+﻿@using EGH01.Core;
+@using EGH01.Models.EGH;
+@using EGH01DB.Primitives;
+@using System.Web.Mvc;
+@model EGH01DB.Primitives.Report
+@{
+    Layout = "~/Views/Shared/EGHLayout.cshtml";
+
+}
+  @if (ViewBag.stage.Equals("П"))
+  {
+      using(Html.BeginForm("ReportWatch", "EGHRGE"))
+      {
+          @*String value = ViewBag.msg;
+          @Html.Raw(value)*@  
+      }
+  }
+  else if (ViewBag.stage.Equals("Р"))
+  { 
+      using(Html.BeginForm("ReportWatch", "EGHCEQ"))
+      { 
+          String value = ViewBag.msg;
+          @Html.Raw(value)
+      }
+  }
+  else if (ViewBag.stage.Equals("С"))
+  {
+      using (Html.BeginForm("ReportWatch", "EGHGEA"))
+      {
+          String value = ViewBag.msg;
+        @Html.Raw(value)
+      }
+  }
+  else if (ViewBag.stage.Equals("Т"))
+  {
+      using (Html.BeginForm("ReportWatch", "EGHORT"))
+      {
+          String value = ViewBag.msg;
+        @Html.Raw(value)
+      }
+  }
+  <style>
+    /*Стиль для кнопки вверх */
+    .btnn-top button {
+        bottom: 100px;
+        right: 40px;
+        position: fixed !important;
+        float: right !important;
+        width: 120px;
+        height: 44px;
+    }
+    /*Стиль для кнопки вниз */
+    .btnn-bot button {
+        bottom: 50px;
+        right: 40px;
+        position: fixed !important;
+        float: right !important;
+        width: 120px;
+        height: 44px;
+    }
+</style>
+<span class="btnn-top">
+    <button id="toTop">Вверх</button>
+</span>
+<span class="btnn-bot">
+    <button id="toBot">Вниз</button>
+</span>
+
+
+

@@ -1,0 +1,172 @@
+﻿@using System.Web.Script.Serialization;
+@using EGH01.Core;
+@using EGH01.Models.EGH;
+@using EGH01DB.Primitives;
+@using EGH01DB.Types;
+@using EGH01DB.Blurs;
+@using EGH01DB.Objects;
+@using EGH01DB;
+@using EGH01.Models.EGHRGE;
+@model  EGH01.Models.EGHRGE.ForecastViewConext
+
+@{
+    EGH01DB.RGEContext.ECOForecast0 level0 = @Model.ecoforecastx.level0;
+    EGH01DB.RGEContext.ECOForecast1 level1 = @Model.ecoforecastx.level1;
+
+    string JSONCanv = new JavaScriptSerializer().Serialize(level1.bb);
+    
+    
+ }
+
+<div class="boxdata">
+
+    <h4>1. Поверхностный слой</h4>
+    
+    <fieldset form="ChoiseRiskObject">
+        <legend> Справочные данные </legend>
+        <p>
+            <label class="boxdata-label-40 ">Коэффициент растекания (м<sup>-1</sup>) </label>
+            @level1.d1
+        </p>
+        <p>
+           <label class="boxdata-label-40 ">Удельная величина выбросов нефтепродукта (кг/м<sup>2</sup>) </label>
+            @level1.q1
+        </p>
+    </fieldset>
+    <fieldset form="ChoiseRiskObject">
+        <legend> Вычисления </legend>
+        <p>
+            <label class="boxdata-label-40 ">Масса нефтепродукта на поверностном  слое (кг) </label>
+             @(Math.Round(level0.M0,0))
+        </p>
+        <p>
+            <label class="boxdata-label-40 ">Площадь наземного пятна загрязнения (м<sup>2</sup>) </label>
+            @(Math.Round(level1.S1,0))
+        </p>
+
+        <p>
+            <label class="boxdata-label-40 "> Радиус пятна при равномерном растекании (м) </label>
+            @(Math.Round(level1.R1,1))
+        </p>
+
+        <p>
+            <label class="boxdata-label-40 ">Толщина наземного пятна загрязнения (м) </label>
+            @(Math.Round(level1.H1,4))
+        </p>
+        <p>
+            <label class="boxdata-label-40 ">Масса испарившегося нефтепродукта (кг) </label>
+            @(Math.Round(level1.M1,0))
+        </p>
+    </fieldset>
+    <fieldset form="ChoiseRiskObject">
+        <legend>Форма  наземного пятна загрязнения</legend>
+
+       <canvas id="topblure" width="@level1.bb.CanvaX" height="@level1.bb.CanvaY" style="border-style:solid;border-width:1px; background-color:white;">
+        </canvas>
+        <script type="text/javascript">
+            var JSONCanv = JSON.parse("@JSONCanv".split('&quot;').join('"'));  
+            var DarkOliveGray = '#556B2F';
+            var DarkStateGray = '#2F4F4F';
+            var Red =  '#FF0000';
+            var Grid = '#6495ED';
+            var White = '#FFFFFF';
+            var canvas = document.getElementById('topblure'); // canvas
+            var canvasW = canvas.width;    // граница canvas
+            var canvasH = canvas.height;   // граница canvas
+            var context = canvas.getContext('2d');
+
+                        
+            context.beginPath();
+            context.strokeStyle = Grid;
+            for (var x = 10; x < canvasW; x += 10)
+            {
+                context.moveTo(x, 0);
+                context.lineTo(x, canvasH);
+            }
+            for (var y = 10; y < canvasH; y += 10) {
+                context.moveTo(0, y);
+                context.lineTo(canvasW, y);
+            }
+            context.closePath();
+            context.stroke();
+
+          
+            if (JSONCanv.nr >= JSONCanv.LimitR) {
+                context.beginPath();
+                context.fillStyle = DarkStateGray;            //'#FF000';
+                context.moveTo(JSONCanv.newborder3[0].x, JSONCanv.newborder3[0].y);
+                for (var i = 1; i < JSONCanv.newborder3.length; i++) {
+                    context.lineTo(JSONCanv.newborder3[i].x, JSONCanv.newborder3[i].y);
+                }
+                context.closePath();
+                context.fill();
+                context.beginPath();
+                context.arc(JSONCanv.center2.x, JSONCanv.center2.y, JSONCanv.R, 0, 2 * Math.PI, false);
+                context.closePath();
+                context.stroke()
+            }
+            else {
+                context.beginPath();
+                context.fillStyle = DarkStateGray;
+                context.arc(JSONCanv.center2.x, JSONCanv.center2.y, JSONCanv.R, 0, 2 * Math.PI, true);
+                context.closePath();
+                context.fill();
+                context.beginPath();
+                context.strokeStyle = Red;
+                context.arc(JSONCanv.center2.x, JSONCanv.center2.y, JSONCanv.R, 0, 2 * Math.PI, false);
+                context.closePath();
+                context.stroke()
+            }
+
+            
+            // оси  
+            context.moveTo(JSONCanv.center2.x, 0);
+            context.lineTo(JSONCanv.center2.x, JSONCanv.center2.x * 2);
+            context.moveTo(0, JSONCanv.center2.y);
+            context.lineTo(JSONCanv.center2.y * 2, JSONCanv.center2.y);
+            context.closePath();
+            context.stroke();
+
+            // надпись 
+            context.textBaseline = "middle";
+            context.fillStyle = Red;
+            context.font = 'bold 30px Arial';             // Courier New';
+            context.fillText(' ' + JSONCanv.nr + 'м', JSONCanv.center2.x + JSONCanv.R - 50, JSONCanv.center2.y - 15, 30);
+            context.beginPath();
+            context.fillStyle = Red;
+            context.arc(JSONCanv.center2.x, JSONCanv.center2.y, 2, 0, 2 * Math.PI, true);
+            context.closePath();
+            context.fill();
+
+        </script>
+
+    </fieldset>
+
+    @if (level1.f1ecoobjectslist.Count > 0)
+    {
+       <fieldset form="ChoiseRiskObject">
+        <legend> Природоохранные объекты (радиус: @(level1.R1.ToString() +"м)") </legend>
+
+        @foreach (RGEContext.FEcoObjectsList.FEcoObject eo in level1.f1ecoobjectslist)
+        {
+          <p>
+            <label class="boxdata-label-40 "> </label> @eo.line
+         </p>
+        } 
+      </fieldset>         
+    }
+    @if (level1.f1anchorpointlist.Count > 0)
+    {
+      <fieldset form="ChoiseRiskObject">
+        <legend> Опорные точки (радиус: @(level1.R1.ToString() + "м)") </legend>
+        @foreach (RGEContext.FAnchorPointList.FAnchorPoint ap in level1.f1anchorpointlist)
+        {
+            <p>
+                <label class="boxdata-label-40 "> </label> @ap.line
+            </p>
+        }
+      </fieldset>
+    }
+
+</div>
+       

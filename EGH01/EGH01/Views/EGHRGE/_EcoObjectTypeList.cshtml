@@ -1,0 +1,66 @@
+﻿@using EGH01DB.Types;
+@using EGH01.Core;
+
+@model List<EcoObjectType>
+@{
+    Menu menu = new Menu(
+    new Menu.MenuItem("Удалить", "EcoObjectType.Delete", true),
+    new Menu.MenuItem("Изменить", "EcoObjectType.Update", true)
+    );
+
+}
+<table style="width:100%" id="main">
+
+    <thead>
+        <tr>
+            <th> &nbsp; </th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (EcoObjectType t in @Model)
+        {
+            <tr>
+                <td>
+
+
+                    @using (Html.BeginForm("EcoObjectType", "EGHRGE"))
+                    {
+
+                        <div class="box">
+                            <div class="boxdata">
+
+                                <p><label class="boxdata-label-30">Код типа природоохранного объекта</label> @t.type_code.ToString()</p>
+                                <p><label class="boxdata-label-50">Наименование типа природоохранного объекта</label>@t.name.ToString()</p>
+                                <p> <label class="boxdata-label-50">Категория водоохранной территории</label> @t.waterprotectionarea.name.ToString()</p>
+                                <input type="hidden" value="@t.type_code.ToString()" name="type_code">
+
+                            </div>
+                            @Html.Partial("_TypeLineMenu", menu)
+                        </div>
+
+                    }
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+<script>
+$(document).ready(function() {
+    $('#main').DataTable({
+        "language":
+datatables_lang, "pageLength":5
+
+    } );
+} );
+</script>
+
+
+
+
+
+
+
+

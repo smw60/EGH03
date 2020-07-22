@@ -1,0 +1,1003 @@
+﻿html {
+    padding: 0px;
+    height: 100%;
+}
+
+body {
+    padding: 0px;
+    min-height: 100%;
+    background: #f3f3f3; /*новый фон*/
+}
+
+.container {
+    padding: 15px 0;
+}
+
+h2 {
+    vertical-align: top;
+}
+
+    h2 * {
+        vertical-align: top;
+    }
+    
+    h2 span {
+        display: inline-block;
+        padding: 0 1%;
+        max-width: 48%;
+    }
+        h2 span:nth-last-child(2) {
+            border-right: 4px solid #000;
+        }
+
+    h2 span:nth-child(2) {
+        max-width: 48%;
+    }
+    h2 span.big {
+        max-width: 78%;
+    }
+
+
+h3, h4 {
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+a {
+    color: #316d32;
+}
+
+    a:hover {
+        color: #316d32;
+    }
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+input[type="radio"]{
+    width:25px;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+navbar-nav nav {
+    width:100%;
+}
+
+.navbar .dropdown-menu li a {
+    padding: 8px 20px;
+}
+
+    .navbar .dropdown-menu li:hover { /*при наведении на пункты меню*/
+        background: #ccc;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+.osnova {
+    padding-top: 10px;
+}
+
+.navbar-brand { /*логотип*/
+    padding: 0px;
+    height: 53px;
+}
+
+    .navbar-brand img {
+        padding: 0px;
+        padding-left: 15px;
+        height: 53px;
+    }
+
+.panel-title {
+    font-size: 25px;
+}
+
+.dsblock input, .dsblock select {
+    display: block;
+}
+
+.mesto input {
+    width: 60px;
+}
+
+.textbold {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.carta {
+    background: #000;
+    height: 500px;
+}
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto 150px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+    height: -50px;
+}
+
+.proverka1 > a, .proverka1 > div {
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    border: none;
+    color: #444444;
+    background-color: #ffffff;
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    padding: 6px 16px;
+    font-size: 13px;
+    line-height: 1.846;
+    border-radius: 3px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    vertical-align: top;
+}
+
+.panel-success > .panel-heading {
+    background: #85DB18;
+}
+
+#spravochniki_list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar {
+    background: #fff; /*фон верхней основной панели*/
+    border-bottom: 2px #aaa solid;
+}
+
+.navbar-nav{
+    width: 100%;
+}
+
+body {
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    width: 58%;
+    padding: 1px;
+    height: auto;
+    display: inline-flexbox;
+}
+
+    input[type="checkbox"] {
+        text-align: left;
+        width: 20px;
+    }
+
+fieldset {
+    padding: 0.5%;
+    border: 1px solid black;
+    width: 99%;
+    margin: 0.5%;
+}
+
+    fieldset legend {
+        margin-bottom: 0;
+        width: auto;
+        font: inherit;
+        border: none;
+        padding: 0 5px;
+    }
+
+.boxdata select {
+    height: 23.2px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #f2cb9b;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #e3ef9e;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #f2cb9b;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/*заголовок */
+.title h2 {
+    color: #000;
+    font-size: 30px;
+    vertical-align: middle;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: left;
+}
+
+    .title h2 a {
+        color: #316d32;
+    }
+
+    .title h2.double {
+        font-size: 24px;
+    }
+/*меню*/
+a.dropdown-toggle.btn.btn-link {
+    color: #000;
+    font-size: 20px;
+}
+/*второе меню*/
+.proverka1.navbar-default .navbar-nav > li > a, .proverka1 a.dropdown-toggle.btn.btn-link {
+    color: #000;
+    font-weight:bold;
+    font-size: 16px;
+}
+
+.proverka1.navbar-default {
+    background: #fff;
+    position: relative;
+    border-top: 2px solid #aaa;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
+    border: #030 1px solid;
+}
+
+/**    не трогать   смелов       */
+
+body {
+    color: black;
+}
+
+
+*::after {
+    content: "";
+}
+
+label[aria-required]::after {
+    content: "*";
+    color: red;
+}
+
+.boxmenu {
+    box-sizing: border-box; /* границу включить в размер .box*/
+    background-color: #ccc; /* основные верхние менюшки беж*/
+    overflow: hidden;
+    border: 2px solid #000; /* светло-зелен.*/
+    width: 100%;
+    margin: 12px 0;
+    padding: 1px;
+    /*min-width: 800px;*/
+}
+
+.boxconnect, .boxcainfo {
+    box-sizing: border-box;
+    background-color: #eff2cd;
+    overflow: hidden;
+    border: 2px solid #75cc72;
+    width: 85%;
+    margin: 12px;
+    padding: 1px;
+    min-width: 800px;
+}
+
+.boxconnect-boxitem, .boxcainfo-boxitem {
+    border: 2px solid #000; /* темно-зеленый*/
+    padding: 12px;
+}
+
+    .boxconnect-boxitem label, .boxcainfo-boxitem label {
+        width: 10%;
+        margin: 10px;
+    }
+
+    .boxconnect-boxitem input {
+        width: 20%;
+        margin: 10px;
+    }
+
+    .boxconnect-boxitem button, .boxcainfo-boxitem button {
+        float: right;
+        background-color: #ccc;
+        color: #000;
+        font-weight: bold;
+        padding: 10px;
+        border: 2px solid #000;
+        margin: 5px;
+    }
+/*для всех контейнеров fieldset*/
+.box-fieldset {
+    display: block;
+    margin: 5px;
+    white-space: nowrap;
+    height: auto;
+}
+
+.boxcainfo-boxitem-fieldset {
+    display: block;
+    margin: 2px;
+}
+
+.boxcainfo-boxitem-buttonlist {
+    display: block;
+    float: right;
+    margin: 2px;
+}
+
+.boxmenu-buttonlist {
+    /*border: 2px solid #000;*/
+    padding: 5px;
+}
+
+.box-close {
+    float: right;
+    /*border:1px solid #000;*/
+    background-color: #ccc;
+    padding: 0px 0px 0px 0px;
+    margin: 2px;
+    border: none;
+}
+
+.boxmenu button {
+    background-color: #ccc;
+    color: #000;
+    font-weight: bold;
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid #000;
+}
+
+    .boxmenu button[disabled] {
+        background-color: #ccc;
+        color: gray;
+        font-weight: bold;
+        margin: 5px;
+        padding: 10px;
+        border: 2px solid #000;
+    }
+
+    .boxMap {
+    box-sizing: border-box; /* границу включить в размер .box*/
+    overflow: hidden; /* все что вылезает за границу .box  - скрывать*/
+    border: 1px solid #000;
+    width: 100%;
+    background-color: #ccc; /* меню основные в таблицах*/
+    margin: 12px 0px 12px 2px;
+    padding: 0.5%;
+    /*min-width: 800px;*/
+}
+
+.box {
+    box-sizing: border-box; /* границу включить в размер .box*/
+    overflow: hidden; /* все что вылезает за границу .box  - скрывать*/
+    border: 1px solid #000;
+    width: 100%;
+    background-color: #ccc; /* меню основные в таблицах*/
+    margin: 12px 0px 12px 0px;
+    padding: 0.5%;
+    /*min-width: 800px;*/
+}
+
+    .box .boxdata {
+        margin: 5px;
+        width: 100%;
+    }
+
+.boxdata label {
+    width: 40%;
+    float: left;
+    white-space: nowrap;
+    margin-bottom: 0;
+}
+
+    .boxdata label.boxdata-label-20 {
+        float: left;
+        margin-top: 5px;
+        width: 20%;
+    }
+    /*#list_cadastre{
+            width:80%;
+            max-width:none;
+        }*/
+
+    .boxdata label.boxdata-label-40 {
+        width: 45%;
+        float: left;
+    }
+
+    .boxdata label.boxdata-label-80 {
+        width: 70%;
+        float: left;
+    }
+
+.box p {
+    margin: 1px;
+}
+
+.boxdata label.boxdata-label-100{
+    width:100%;
+}
+
+.boxdata span {
+    width: 25%;
+    float: none;
+}
+
+.boxdata .leftboxdata {
+    width: 50%;
+    float: left;
+}
+
+.boxdata .rightboxdata {
+    width: 50%;
+    float: right;
+}
+
+.leftboxdata label {
+    width: 50%;
+    float: left;
+}
+
+.rightboxdata label {
+    width: initial;
+    float: left;
+    margin-right: 10%;
+}
+
+.boxdata-input-20 {
+    width: 20%;
+}
+
+/*Для широты и долготы в 3 текстовых поля*/
+.boxdata-input-10 {
+    width: 10%;
+}
+
+.boxdata-input-80 {
+    float: left;
+    width: 70%;
+    max-width: none;
+    position: relative;
+    left: 140px;
+}
+.boxdata-textarea-80 {
+    float: left;
+    width: 75%;
+    margin-bottom:10px;
+}
+
+.boxdata-input-50 {
+    /*display:flexbox;
+            align-items:flex-start;*/
+    /*height:auto;
+           min-height: 80px;*/
+}
+
+.boxdata input[disabled] {
+    background-color: #ccc; /*кнопки светлосалатовые);*/
+    color: black;
+    border: none;
+}
+
+element.style {
+    width: 25%;
+    height: inherit;
+}
+
+/*строки без форм*/
+.boxdata span.boxdata-span {
+    width: 55%;
+    max-width: 55%;
+    display: inline-block;
+    text-align: left;
+}
+
+.boxcontrol {
+    margin: 1px;
+    background-color: #eff2cd;
+    padding: 2px;
+    text-align: right;
+    border: 1px solid #000;
+    clear: both;
+}
+
+    .boxcontrol input, button {
+        background-color: #ccc;
+        color: #000;
+        font-weight: bold;
+        border: 1px solid #000;
+    }
+    button:focus, button:active{
+        border: 1px solid #030;
+        box-shadow:none !important;
+        -webkit-box-shadow:none !important;
+    }
+
+        .boxcontrol input[disabled], button[disabled] {
+            background-color: #ccc;
+            color: gray;
+            font-weight: bold;
+            border: 1px solid #000;
+        }
+
+.boxmessage {
+    display: none;
+    margin: 1px;
+    background-color: #f7e19e;
+    padding: 2px;
+    border: 1px double #000;
+    /*text-align:right;*/
+}
+
+
+/*    не трогать          */
+
+
+
+/* Минимально необходимый CSS для footer*/
+#footer {
+    position: fixed; /* Фиксированное положение */
+    left: 0;
+    bottom: 0; /* Левый нижний угол */
+    padding: 10px; /* Поля вокруг текста */
+    background: #fff; /*фон верхней основной панели*/
+    border-top: 2px #aaa solid;
+    color: #000; /* Цвет текста */
+    width: 100%; /* Ширина слоя */
+}
+
+#footer a img {
+    height: 20px;
+}
+
+/*Для поиска*/
+#ChoiceRiskObject_id {
+    max-width: none;
+    max-height: none;
+    white-space: pre;
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    height: 100%;
+    /*overflow:scroll;*/
+}
+
+#main_menu:hover { /*при наведении на главное меню меняется фон*/
+    background: #ccc;
+    text-decoration: none;
+}
+
+.go-up, .go-down {
+    display: none;
+    position: fixed; /*позиционирование*/
+    z-index: 9999; /*поверх все элементов на странице*/
+    right: 15%; /*положение на странице, если слева - left*/
+    background: #4F4F4F;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    font: normal normal 42px/42px sans-serif;
+    text-shadow: 0 1px 2px #000;
+    opacity: .5;
+    padding: 3px;
+    margin-bottom: 5px;
+    width: 42px;
+    height: 42px;
+}
+
+.go-up {
+    bottom: 60px;
+}
+
+.go-down {
+    bottom: 10px;
+}
+
+    .go-down:hover,
+    .go-up:hover {
+        opacity: 1;
+        box-shadow: 0 5px 0.5em -1px #666;
+    }
+
+.imgCenter {
+    text-align: center;
+}
+/*Карта*/
+.map {
+    height: 600px;
+    width: 100%;
+    margin: auto;
+    border: 1px solid #316d32;
+}
+.mapList {
+    border: 1px solid #316d32;
+}
+/*Кнопка над картой*/
+.center {
+    text-align: center;
+}
+
+    .center input[type='button'] {
+        width: 100%;
+        margin: 2px 0;
+    }
+    
+
+/*Для маленьких экранов*/
+@media (max-width:1440px) {
+    .boxdata label {
+        width: 50%;
+    }
+    .boxdata label {
+        width: 50%;
+    }
+
+    .boxdata span.boxdata-span {
+        width: 45%;
+    }
+
+    input, select, textarea {
+        width: 45%;
+    }
+
+    #wrap {
+        margin-top: 30px;
+    }
+    #wrap .navbar{
+        min-height:40px;
+    }
+    #wrap .navbar .navbar-nav li a{
+        padding: 10px;
+    }
+    h2 span {
+        font-size:90%;
+    }
+}
+/*Для маленьких экранов*/
+@media (max-width:1200px) {
+    #wrap {
+        margin-top: 50px;
+    }
+}
+.table thead > tr > th, 
+.table tbody > tr > th, 
+.table tfoot > tr > th, 
+.table thead > tr > td, 
+.table tbody > tr > td, 
+.table tfoot > tr > td {
+    padding: 6px !important;
+}
+
+
+.dataTable.border{
+    border: 2px solid #000;
+    width: 100%;
+    background-color: #ccc;
+    padding:0px;
+}
+
+
+.dataTable.border td, .dataTable.border th{
+    padding: 0.5%;
+    border-left:1px solid #000;
+    border-top:1px solid #000;
+    margin:0;
+}
+.dataTable.border th {
+    text-align:center;
+}
+/*Кнопки в списках*/
+.Удалить {
+    padding: 12px;
+    background: url(/Resources/delete-ico.png) no-repeat 2px;
+    background-size:20px;
+}
+.Изменить{
+    padding: 12px;
+    background: url(/Resources/edit-ico.png) no-repeat 2px;
+    background-size:20px;
+}
+.Просмотреть{
+    padding: 12px;
+    background: url(/Resources/eye-ico.png) no-repeat 2px;
+    background-size:20px;
+}
+.Сохранить{
+    padding: 12px;
+    background: url(/Resources/save-ico.png) no-repeat 2px;
+    background-size:20px;
+}
+.Прогноз{
+    padding: 12px;
+    background: url(/Resources/trend.png) no-repeat 2px;
+    background-size:20px;
+}
+.Отказаться{
+    padding: 12px;
+    background: url(/Resources/reject.png) no-repeat 2px;
+    background-size:20px;
+}
+.точка{
+    padding: 12px;
+    background: url(/Resources/geo-point.png) no-repeat 2px;
+    background-size:20px;
+}
+.Выбрать{
+    padding: 12px;
+    background: url(/Resources/select.png) no-repeat 2px;
+    background-size:20px;
+}
+.Создать{
+    padding: 12px;
+    background: url(/Resources/create.png) no-repeat 2px;
+    background-size:20px;
+}
+.Создать.рядом{
+    padding: 12px;
+    background: url(/Resources/create-2.png) no-repeat 2px;
+    background-size:20px;
+}
+.Очистить{
+    padding: 12px;
+    background: url(/Resources/clear-black.png) no-repeat 2px;
+    background-size:20px;
+}
+.Техногенный.объект{
+    padding: 12px;
+    background: url(/Resources/icon_ndt.png) no-repeat 2px;
+    background-size:20px;
+}
+.Центр {
+    padding: 12px;
+    background: url(/Resources/Home.png) no-repeat 2px;
+    background-size: 20px;
+}
+.home_button{
+    font-size:200%;
+    width:118px;
+    word-wrap:normal;
+    height:40px;
+    overflow:hidden;
+    font-family:"Courier New";
+    margin-bottom:20px;
+    transition:1s;
+    text-align:left;
+    background: linear-gradient(to top, #aaa, #ddd);
+    width:100%;
+}
+.home_button:hover{
+    color:#060;
+    box-shadow:#000 2px 2px 5px;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+    background:#060;
+    border: 1px solid #060;
+}
+
+
+    #calendar3 {
+        width: 100%;
+        font: monospace;
+        line-height: 1.2em;
+        font-size: 15px;
+        text-align: center;
+
+    }
+
+        #calendar3 thead tr:last-child {
+            font-size: small;
+            color: #141413;
+        }
+
+        #calendar3 tbody td {
+            color: #0c3009;
+        }
+
+            #calendar3 tbody td:nth-child(n+6), #calendar3 .holiday {
+                color: #060;
+                font-weight: bold;
+            }
+
+            #calendar3 tbody td.today {
+                outline: 3px solid green;
+            }
+            #calendar3 select, #calendar3 input{
+                width:100%;
+            }
+
+    .container .btn{
+        border:1px solid #000;
+        width:100%;
+        font-size: 150%;
+        width:118px;
+        word-wrap:normal;
+        height:40px;
+        overflow:hidden;
+        font-weight: bold;
+        font-family:"Courier New" ;
+        transition:1s;
+        background: linear-gradient(to top, #aaa, #ddd);
+        width:100%;
+       
+    }
+
+.modal-footer .btn + .btn {
+    margin-bottom: 0;
+    margin-left: 2px;
+}
+    .padding{
+        padding:5%;
+    }
+
+    
+    .modal .close{
+        margin-top:-20px;
+    }
+    .w100{
+        font-weight: bold;
+        border-radius: 0px;
+        width:100%;
+        font-size: 150%;
+        width:118px;
+        word-wrap:normal;
+        height:40px;
+        overflow:hidden;
+        font-family:"Courier New";
+        margin-bottom: -9px;
+        transition:1s;
+       
+        background: linear-gradient(to top, #aaa, #ddd);
+        width:100%;
+    }
+
+    .sidebar .boxMap{
+    width:99.8%;
+    padding:5px;
+    border: 1px solid #000;
+}
+
+.boxMap-noborder {
+    border:none;
+}
+
+
+.sidebar .box{
+    width:95%;
+    padding:5px;
+}
+.sidebar .box fieldset{
+    border:none;
+}
+.sidebar .box label{
+    margin:0;
+}
+.aaaa{
+ border:1px solid #000;
+ background: linear-gradient(to top, #aaa, #ddd);
+ padding:10px;
+ font-size: 100%;
+ font-weight: bold;   
+
+}
+.a{
+   text-decoration:underline;
+   text-decoration-color:green;
+    font-size: 120%;
+}
+.aа{
+   text-decoration:underline;
+   text-decoration-color:green;
+    font-size: 100%;
+     font-weight: bold;  
+     text-align:center;
+       
+
+}
+.main h1{
+    font-size: 48px;
+    font-weight:bold;
+    margin:0 0 5px 0;
+    text-align:center;
+}
+.main h2{
+    font-size: 26px;
+    font-weight:bold;
+    margin:0;
+}
+.main h3{
+    font-size: 22px;
+    text-align:left;
+    margin:0;
+}
+.main .boxdata div{
+    vertical-align:top;
+    padding:5px 15px;
+    font-size: 18px;
+    text-align:left;
+}
+.main .boxdata{
+    margin:0;
+}
+.main .row{
+    min-height:initial;
+}
+.main h2.underline{
+    font-size:28px;
+    padding:10px 0;
+    border-bottom:solid 2px #090;
+}
+.dataTables_wrapper .row{
+    min-height:0;
+}
+.sorting_asc{
+    display:none;
+}
+.bold{
+    font-weight:bold;
+}
+.row{
+    min-height:0;
+}
