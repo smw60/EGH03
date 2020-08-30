@@ -77,13 +77,44 @@ namespace EGH01DB.Objects
 
 
         }
-        public RiskObject(MapePoint mappoint): base(mappoint) 
+        public RiskObject(MapePoint mappoint) : base(mappoint)
         {
             this.id = 1000000000;                   // потом константу
             this.type = new RiskObjectType();       // географическая точка  
             this.cadastretype = CadastreType.defaulttype;
-            this.name = "географическая точка";               
-            this.address =  mappoint.district.name;
+            this.name = "географическая точка";
+            RGEContext dbcontext = new RGEContext();
+            using (SqlCommand cmd = new SqlCommand("MAP.InCityMap", dbcontext.connection))
+            {
+                bool rc = false;
+                cmd.CommandType = CommandType.StoredProcedure;
+                {
+                    SqlParameter parm = new SqlParameter("@point", SqlDbType.VarChar);
+                    parm.Value = coordinates.GetMapPoint();
+                    cmd.Parameters.Add(parm);
+                }
+                {
+                    SqlParameter parm = new SqlParameter("@exitrc", SqlDbType.Int);
+                    parm.Direction = ParameterDirection.ReturnValue;
+                    cmd.Parameters.Add(parm);
+                }
+                try
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (rc = reader.Read())
+                    {
+                        this.address = (string)reader["name"];
+                    }
+                    reader.Close();
+                }
+                catch (Exception e)
+                {
+                    rc = false;
+                };
+            }
+
+            if (this.address == null) this.address = mappoint.district.name;
+
             this.district = mappoint.district;
             this.region = new Region();
             this.ownership = string.Empty;
@@ -104,7 +135,7 @@ namespace EGH01DB.Objects
             this.tubediameter = 0.0f;
             this.productivity = 0.0f;
             this.geodescription = string.Empty;
-            this.soiltype  = mappoint.soiltype;
+            this.soiltype = mappoint.soiltype;
         }
         public RiskObject(int id, 
                             Point point, 
