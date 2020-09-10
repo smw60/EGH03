@@ -36,8 +36,8 @@
     <fieldset form="ChoiseRiskObject">
         <legend> Вычисления </legend>
         <p>
-            <label class="boxdata-label-40 ">Масса нефтепродукта на поверностном  слое (кг) </label>
-             @(Math.Round(level0.M0,0))
+            <label class="boxdata-label-40 ">Масса нефтепродукта на поверности земли (кг) </label>
+            @(Math.Round(level0.M0,0))
         </p>
         <p>
             <label class="boxdata-label-40 ">Площадь наземного пятна загрязнения (м<sup>2</sup>) </label>
@@ -53,10 +53,22 @@
             <label class="boxdata-label-40 ">Толщина наземного пятна загрязнения (м) </label>
             @(Math.Round(level1.H1,4))
         </p>
+
+        <p>
+            <label class="boxdata-label-40 ">Остаточная нефтеемкость среды (?) </label>
+
+        </p>
+
         <p>
             <label class="boxdata-label-40 ">Масса испарившегося нефтепродукта (кг) </label>
             @(Math.Round(level1.M1,0))
         </p>
+
+        <p>
+            <label class="boxdata-label-40 ">Температура воздуха (С) </label>
+            
+        </p>
+
     </fieldset>
     <fieldset form="ChoiseRiskObject">
         <legend>Форма  наземного пятна загрязнения</legend>

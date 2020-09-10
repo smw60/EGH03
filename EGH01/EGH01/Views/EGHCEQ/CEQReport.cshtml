@@ -25,7 +25,7 @@
             <fieldset form="ChoiseRiskObject">
                 <legend> Исходные данные </legend>
                 <p>
-                    <label class="boxdata-label-40 ">Дата инцидента  </label>
+                    <label class="boxdata-label-40 ">Дата аварии  </label>
                     @rgerepot.date.ToShortDateString()
                 </p>
                 <p>
@@ -59,34 +59,37 @@
             <fieldset form="ChoiseRiskObject">
                 <legend> Наземное пятно загрязнения (радиус: @( String.Format("радиус: {0} м )", rgerepot.R1) ) </legend>
                 
-                    <fieldset form="ChoiseRiskObject">
-                        <legend> Грунтовый слой</legend>
-                        <p>
-                            <label class="boxdata-label-40 ">Максимальная концентрация нефтеродукта в грунте (кг/кг)</label>
-                            @rgerepot.C3 = @(Math.Round(rgerepot.C3 * Const.KG_to_MG, 3))(мг/кг)
-                        </p>
-                        <p>
-                            <label class="boxdata-label-40 ">Предельно допустимая концентрация в грунте (кг/кг)</label>
-                            @Model.pdk_coef = @(Math.Round(Model.pdk_coef * Const.KG_to_MG, 3))(мг/кг)
-                        </p>
-                        @if (Model.excessgroundconcentration > 1)
-                    {
+                <fieldset form="ChoiseRiskObject">
+                    <legend> Зона аэрации </legend>
                     <p>
-                        <label class="boxdata-label-40 ">Кратность превышения</label>
-                        @Model.excessgroundconcentration        @*@(Math.Round(rgerepot.C3/Model.pdk_coef, 2))*@
+                        <label class="boxdata-label-40 ">Максимальная концентрация нефтеродукта в грунте (кг/кг)</label>
+                        @rgerepot.C3 = @(Math.Round(rgerepot.C3 * Const.KG_to_MG, 3))(мг/кг)
                     </p>
+                    <p>
+                        <label class="boxdata-label-40 ">Предельно допустимая концентрация в грунте (кг/кг)</label>
+                        @Model.pdk_coef = @(Math.Round(Model.pdk_coef * Const.KG_to_MG, 3))(мг/кг)
+                    </p>
+                    @if (Model.excessgroundconcentration > 1)
+                    {
+                        <p>
+                            <label class="boxdata-label-40 ">Кратность превышения</label>
+                            @Model.excessgroundconcentration        @*@(Math.Round(rgerepot.C3/Model.pdk_coef, 2))*@
+                        </p>
                     }
                     else
                     {
-                    <p>
-                        <label class="boxdata-label-40 ">Кратность превышения</label>
-                        нет превышения
-                    </p>
+                        <p>
+                            <label class="boxdata-label-40 ">Кратность превышения</label>
+                            нет превышения
+                        </p>
+                        <p>
+                            <label class="boxdata-label-40 ">Время достижения НП уровня грунтовых вод</label>
 
+                        </p>
                     }
 
 
-                    </fieldset>
+                </fieldset>
                     <fieldset form="ChoiseRiskObject">
                         <legend> Уровень грунтовых вод</legend>
                         <p>
