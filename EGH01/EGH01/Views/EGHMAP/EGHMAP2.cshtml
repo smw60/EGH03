@@ -47,7 +47,7 @@
     <form>
 
         <input type="checkbox" id="Layer12" onclick="toggleLayer(layer12)" onchecked><label for="Layer12">Карта защищенности подземных вод</label>
-        <input type="checkbox" id="Layer18" onclick="toggleLayer(layer18)" onchecked><label for="Layer18">Карта самоочищения</label>
+        <input type="checkbox" id="Layer18" onclick="toggleLayer(layer18)" onchecked><label for="Layer18">Карта самоочищения почв</label>
         <input type="checkbox" id="Layer18" onclick="toggleLayer(layer25)" onchecked><label for="Layer25">Карта районированной защищенности геологической среды</label>
     </form>
     <div>
@@ -553,12 +553,12 @@
                 $("#protectgrade").html(data.Protectgrade);
 
 
-                $("#districtt").html("Регион:");
-                $("#regionn").html("Область:");
-                $("#protectionlevell").html("Степень защищённости воды:");
-                $("#selfcleaningzonee").html("Способность к самоочищению:");
-                $("#protectzonee").html("Наименование степени защищённости:");
-                $("#protectgradee").html("Степень защищённости грунта от 1 до 5:");
+                $("#districtt").html("Район: ");
+                $("#regionn").html("Область: ");
+                $("#protectionlevell").html("Степень защищённости подземных вод: ");
+                $("#selfcleaningzonee").html("Способность почв к самоочищению: ");
+                $("#protectzonee").html("Наименование степени защищённости геологической среды: ");
+                $("#protectgradee").html("Степень защищённости грунта от 1 до 5: ");
 
 
 
